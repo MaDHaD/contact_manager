@@ -8,6 +8,7 @@ require_once('user_check.php');
 
 
 
+
         if(isset($_POST['add'])){
 
             $email = $_POST['chek'];
