@@ -12,7 +12,7 @@ require_once('app/index_app.php');
 
 <html>
     <head>
-hello world
+
     </head>
         <body>
             Welcome <?php echo $_SESSION['user_name'] ?> <a href="../app/logout_app.php">Logout</a>
