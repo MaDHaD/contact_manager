@@ -56,7 +56,13 @@ require_once('app/index_app.php');
                        <?php }  ?>
 
                         <tr>
-                        <td><input type="submit" name="add" value="ADD"></td> </tr>
+                        <td><input type="submit" name="add" value="ADD"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="6"><?php for($i=1;$i<=$num_pages;$i++) {
+                                    echo '<a href="'.$_SERVER['PHP_SELF'].'?num='.$i*$per_page.'">'.$i."</a>\n";
+                                } ?></td>
+                        </tr>
 
 
                     </table>

@@ -6,6 +6,17 @@ require_once('user_check.php');
     $sort_fn= 'a';
 
 
+    $q="SELECT count(*) FROM contacts";
+    $result=mysqli_query($con,$q);
+    $row=mysqli_fetch_row($result);
+    $total_rows=$row[0];
+
+    $per_page = 5 ;
+    $num_pages=ceil($total_rows/$per_page);
+
+
+
+
     if(!empty($_COOKIE['selected_emails'])){
         setcookie('selected_emails', '', time()-3600);
         header("Refresh:2");
@@ -20,7 +31,7 @@ require_once('user_check.php');
     }
 
 
-    $query = mysqli_query($con,"SELECT * FROM contacts WHERE user_id= '" . $_SESSION['user_id'] . "'" );
+    $query = mysqli_query($con,"SELECT * FROM contacts  WHERE user_id= '" . $_SESSION['user_id'] . "' LIMIT 0,5" );
 
     $res = mysqli_fetch_all($query,MYSQLI_ASSOC);
 
